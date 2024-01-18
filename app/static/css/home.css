@@ -1,0 +1,48 @@
+/* Home-specific styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  color: var(--font-color); /* Example style */
+}
+p {
+  font-style: italic; /* Example style */
+}
+
+h1,
+p,
+#logoutForm {
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+#logoutForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--bold); */
+  /* align-items: end; */
+  /* justify-content: center; */
+  /* margin-top: 25rem; */
+}
+
+.logoutBtn {
+  margin: auto;
+  padding: 10px 75px;
+  border: 1px solid var(--font-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logoutBtn:hover {
+  background-color: var(--secondary);
+  color: var(--backup);
+  transform: scale(1.05);
+}

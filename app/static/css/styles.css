@@ -1,0 +1,143 @@
+/* app/static/css/style.css */
+
+:root {
+  --primary: #002662;
+  --secondary: #36aba5;
+  --bg: #f8f9fc;
+  --font-color: #1d2433;
+  --hover: #00547c;
+  --backup: #c5e0f7;
+  --bold: #d32e1f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+html,
+body {
+  height: 117vh;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  /* kalo mau dibkin fixed footer 2 line dibawah harus di uncomment */
+  /* padding-bottom: 5rem; */
+  /* height: 1800px; */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4%;
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--font-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--bg);
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  font-size: 22px;
+  color: var(--secondary);
+}
+
+.navbar .navbar-nav a {
+  color: var(--bg);
+  display: inline-block;
+  font-weight: 700;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--secondary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.1rem;
+  border-bottom: 0.1rem solid var(--secondary);
+  transform: scaleX(0);
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.8);
+  transition: 0.4s linear;
+}
+
+main {
+  margin-top: 5rem;
+  flex: 1; /* ini ngebuat main contentnya nge fill height nya */
+}
+
+/* Footer Section */
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 0.1rem 0 2rem;
+  margin-top: 5rem;
+  /* kalau mau bikin fixed position dibawah harus di uncomment */
+  /* position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; */
+}
+
+footer .socials {
+  padding: 0.3rem 0;
+}
+
+footer .socials a {
+  color: var(--bg);
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--hover);
+}
+
+footer .links {
+  margin-bottom: 1.2rem;
+}
+
+footer .links a {
+  color: var(--bg);
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+  color: var(--bg);
+}
+
+footer .credit a {
+  color: var(--font-color);
+  font-weight: 700;
+}
+
+footer .credit a:hover {
+  color: var(--hover);
+}

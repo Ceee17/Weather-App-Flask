@@ -1,0 +1,23 @@
+<!-- app/templates/quiz.html -->
+{% extends 'base.html' %} {% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}" />
+{% endblock %} {% block content %}
+<div class="container">
+  <h1>Natural Language Processing Quiz</h1>
+  <form action="{{ url_for('main.submit_quiz') }}" method="post">
+    {% for question in quiz_questions %}
+    <div class="question">
+      <p>{{ loop.index }}. {{ question.text }}</p>
+      {% for option in question.options %}
+      <div>
+        <input type="radio" id="q{{ loop.parentloop.index }}{{ option.id }}" name="q{{ loop.parentloop.index }}" value="{{ option.id }}" />
+        <label for="q{{ loop.parentloop.index }}{{ option.id }}">{{ option.text }}</label>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="submit-button">Submit Quiz</button>
+  </form>
+</div>
+{% endblock %}

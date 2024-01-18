@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}" />
+{% endblock %} {% block content %}
+<div class="container">
+  <h1>Weather Forecast</h1>
+
+  <!-- Form to get user input for the city -->
+  <form action="{{ url_for('main.weather') }}" method="post">
+    <label for="city">Enter City:</label>
+    <input type="text" id="city" name="city" required />
+    <button type="submit">Get Weather</button>
+  </form>
+
+  {% if weather_data %}
+  <div class="weather-info">
+    <p><strong>City:</strong> {{ weather_data.city }}</p>
+    <p><strong>Temperature:</strong> {{ weather_data.temperature }} °C</p>
+    <p><strong>Conditions:</strong> {{ weather_data.conditions }}</p>
+    <p><strong>Humidity:</strong> {{ weather_data.humidity }}%</p>
+    <p><strong>Wind Speed:</strong> {{ weather_data.wind_speed }} m/s</p>
+    <h2>5-Day Forecast (Interval 3 Hours)</h2>
+    <ul class="forecast-list">
+      {% for forecast in weather_data.forecast %}
+      <li class="forecast-item">
+        <strong>{{ forecast.date }}</strong>
+        <div class="forecast-conditions">{{ forecast.conditions }}<br /></div>
+        <div class="forecast-temperature">{{ forecast.temperature }} °C</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% else %}
+  <p>Weather data not available.</p>
+  {% endif %}
+</div>
+{% endblock %}
