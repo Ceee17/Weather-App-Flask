@@ -20,7 +20,7 @@
 }
 html,
 body {
-  height: 117vh;
+  height: 125vh;
 }
 body {
   font-family: Arial, sans-serif;
@@ -54,6 +54,9 @@ nav {
   font-weight: 900;
   color: var(--bg);
   font-style: italic;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
 }
 
 .navbar .navbar-logo span {
@@ -106,7 +109,7 @@ footer {
 }
 
 footer .socials {
-  padding: 0.3rem 0;
+  padding: 1.5rem 0;
 }
 
 footer .socials a {
@@ -116,7 +119,7 @@ footer .socials a {
 
 footer .socials a:hover,
 footer .links a:hover {
-  color: var(--hover);
+  color: var(--secondary);
 }
 
 footer .links {
@@ -134,7 +137,7 @@ footer .credit {
 }
 
 footer .credit a {
-  color: var(--font-color);
+  color: var(--bold);
   font-weight: 700;
 }
 

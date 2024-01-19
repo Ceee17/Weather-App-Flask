@@ -25,7 +25,7 @@ def login_post():
     #pake library yang sama buat check hashed password dari db
     if user and check_password_hash(user.password, password):
         # Successful login
-        flash('Login successful!', 'success')
+        # flash('Login successful!', 'success')
         # You might want to store the user's session here
         session['user_id'] = user.id
 

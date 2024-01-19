@@ -9,7 +9,13 @@
   </head>
   <body>
     <h2>Registration</h2>
-    {% if error %}
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %} {% if error %}
     <p style="color: red">{{ error }}</p>
     {% endif %}
     <form method="post" action="{{ url_for('main.register') }}">
